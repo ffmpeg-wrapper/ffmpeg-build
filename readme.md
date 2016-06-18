@@ -1,10 +1,10 @@
-# FFProbe PHP Wrapper
+# FFMPEG Build
 
 ## Synopsis
 
 ## Licenses
 
-FFMPEG Wrapper & FFPRobe PHP Wrapper are licensed under [MIT](license.md) @ Richard King
+FFMPEG Wrapper & FFMPEG Build are licensed under [MIT](license.md) @ Richard King
 
 FFmpeg is a trademark of [Fabrice Bellard](http://www.bellard.org), originator of the FFmpeg project.
 FFmpeg codebase is mainly LGPL-licensed with optional components licensed under GPL.
