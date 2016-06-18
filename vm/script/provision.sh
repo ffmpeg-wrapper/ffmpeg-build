@@ -6,15 +6,12 @@
 
 export _VAGRANT_DIR="/vagrant"
 export _SCRIPT_DIR="$_VAGRANT_DIR/script"
-export _PROVISION_DIR="$_SCRIPT_DIR/vagrant"
-export _SUBTASKS_DIR="$_PROVISION_DIR/subtasks"
-export _CONTENT_DIR="$_PROVISION_DIR/content"
-
-# enter permanent su
-sudo su
+export _SUBTASKS_DIR="$_SCRIPT_DIR/subtasks"
+export _CONTENT_DIR="$_SCRIPT_DIR/content"
+export _BUILD_DIR="$_VAGRANT_DIR/build"
 
 # update before provisioning
-apt-get update -y
+sudo apt-get update -y
 
 # install essentials
 "$_SUBTASKS_DIR/install_essentials.sh"
@@ -25,18 +22,11 @@ apt-get update -y
 # install git
 "$_SUBTASKS_DIR/install_git.sh"
 
-# install python
-"$_SUBTASKS_DIR/install_python.sh"
-
-# install PHP
-"$_SUBTASKS_DIR/install_php.sh"
-
-# exit sudo mode
-su vagrant
-
 # install custom content
 "$_SUBTASKS_DIR/install_custom_content.sh"
 
-# compile & install FFMPEG
+# compile FFMPEG
 "$_SUBTASKS_DIR/compile_ffmpeg.sh"
-"$_SUBTASKS_DIR/install_ffmpeg.sh"
+
+# copy FFMPEG executables into $_BUILD_DIR
+"$_SUBTASKS_DIR/copy_ffmpeg_builds.sh"

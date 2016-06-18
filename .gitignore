@@ -1,2 +1,9 @@
-# Vagrant VM folder
+# Vagrant VM directory
 .vagrant
+
+$ Logs
+build.log
+
+# Build directories
+/build
+/vm/build
