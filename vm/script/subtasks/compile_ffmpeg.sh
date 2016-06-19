@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 # |--------------------------------------------------------------------------------------------------------------------
-# | Compile FFMPEG From Source
+# | Compile FFMPEG From Source To Linux
 # |--------------------------------------------------------------------------------------------------------------------
+# |
+# | source: https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
 
 # update and install essentials for compilation
 sudo apt-get update -y
