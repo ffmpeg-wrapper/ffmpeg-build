@@ -6,9 +6,13 @@ VM_BUILD_DIR="$VM_DIR/build"
 BUILD_DIR="build"
 
 export VAGRANT_CWD="$VM_DIR"
+export SHELL_ARGS="$@"
 
 # run vagrant & log the output in the $LOG_FILE
 "$VM_DIR/vagrant.sh" | tee -a "$LOG_FILE"
+
+unset VAGRANT_CWD
+unset SHELL_ARGS
 
 # remove $_BUILD_DIR
 rm -rf "$BUILD_DIR"
